@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
   </head>
   <body>
     <div
@@ -102,7 +104,7 @@
             </div>
           </div>
           <div class="letter hidden">
-            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
               El mejor día de mi vida, jamás me habia encontrado con nadie que
               hubiera conocido por internet y resultó ser una experiencia
@@ -162,10 +164,12 @@
             </div>
           </div>
           <div class="letter hidden">
-            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Exacto, me engañaste porqué supuestamente me prestarías una sombrilla pero en realidad me llevaste a conocer a tu mamá. <br/>
-              También estaba tu tió y ambos salieron a saludarme, me sentí muy nervioso 😬🫢.
+              Exacto, me engañaste porqué supuestamente me prestarías una
+              sombrilla pero en realidad me llevaste a conocer a tu mamá. <br />
+              También estaba tu tió y ambos salieron a saludarme, me sentí muy
+              nervioso 😬🫢.
             </p>
           </div>
 
@@ -219,10 +223,13 @@
             </div>
           </div>
           <div class="letter hidden">
-            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Me ví este anime 4 veces, basicamente porqué para cuando salia la siguiente temporada ya me había olvidado de todo lo que pasaba. <br/>
-              Su historia me atrapó desde el primer capítulo, me encanta la trama y los personajes. <br/>
+              Me ví este anime 4 veces, basicamente porqué para cuando salia la
+              siguiente temporada ya me había olvidado de todo lo que pasaba.
+              <br />
+              Su historia me atrapó desde el primer capítulo, me encanta la
+              trama y los personajes. <br />
               Tienes que verlo conmigo algún día, te va a encantar. 😊
             </p>
           </div>
@@ -249,39 +256,32 @@
           </div>
           <div>
             <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
-              ¿Cuál es mi deporte favorito?
+              ¿Te gusta tu novio?
             </h2>
             <div class="grid grid-cols-2 gap-4">
               <button
-                onclick="checkAnswer(this, 'Fútbol')"
+                onclick="checkAnswer(this, 'No')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Fútbol
+                No
               </button>
               <button
-                onclick="checkAnswer(this, 'Básquetbol')"
+                onclick="checkAnswer(this, 'Si')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Básquetbol
-              </button>
-              <button
-                onclick="checkAnswer(this, 'Tenis')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Tenis
-              </button>
-              <button
-                onclick="checkAnswer(this, 'Natación')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Natación
+                Si
               </button>
             </div>
           </div>
           <div class="letter hidden">
-            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Reemplzar
+              Tu también me gustas, me encanta pasar tiempo contigo y hacer
+              cosas juntos. <br />
+              Eres una persona muy especial para mi y me siento muy afortunado
+              de tenerte en mi vida. <br />
+              Te quiero mucho, espero que podamos seguir compartiendo muchos
+              momentos juntos. 💝😊
             </p>
           </div>
 
@@ -292,61 +292,15 @@
             Siguiente Pregunta
           </button>
         </section>
-
-        <section
-          id="section-6"
-          class="text-center space-y-4 hidden"
-          data-section-id="6"
-        >
-          <div
-            class="flex items-end justify-end content-center items-center mb-6"
-          >
-            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">Quisé</h1>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
-              ¿Cuál es mi película favorita?
-            </h2>
-            <div class="grid grid-cols-2 gap-4">
-              <button
-                onclick="checkAnswer(this, 'Inception')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Inception
-              </button>
-              <button
-                onclick="checkAnswer(this, 'Titanic')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Titanic
-              </button>
-              <button
-                onclick="checkAnswer(this, 'Avatar')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Avatar
-              </button>
-              <button
-                onclick="checkAnswer(this, 'Matrix')"
-                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
-              >
-                Matrix
-              </button>
-            </div>
-          </div>
-          <div class="letter hidden">
-            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
-            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Reemplzar
-            </p>
-          </div>
-
-          <button
-            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
-            onclick="goToNextQuestion()"
-          >
-            Siguiente Pregunta
-          </button>
+        <section id="section-6" class="text-center space-y-4 hidden">
+          <h1 class="text-4xl font-bold tracking-tighter text-[#FF69B4]">
+            Gracias por jugar
+          </h1>
+          <p class="text-lg text-[#8B4513] max-w-lg">
+            Espero que te haya gustado la aventura, sé que no es mucho pero es
+            lo que pude hacer con el tiempo que tenía. <br />
+            Feliz día de la novia, te quiero mucho. 💝😊
+          </p>
         </section>
       </main>
       <footer
@@ -383,8 +337,8 @@
           letter: "I love you",
         },
         5: {
-          answer: "Matrix",
-          letter: "I love you",
+          answer: "Si",
+          letter: "",
         },
       };
 
@@ -443,7 +397,12 @@
           disableButtons();
           startTimer(); // Inicia el temporizador con el tiempo acumulado
         } else {
-          console.log("Respuesta correcta", questionIndex);
+          Swal.fire({
+            title: "Bien hecho!",
+            text: "Respuesta correcta",
+            icon: "success",
+          });
+          disableButtons();
 
           // Marca la pregunta como respondida en sessionStorage
           sessionStorage.setItem(`question-${questionIndex}-answered`, "true");
@@ -473,8 +432,15 @@
       };
 
       const disableButtons = () => {
-        const buttons = document.querySelectorAll("button");
-        buttons.forEach((button) => {
+        const activeSection = document.getElementById(
+          `section-${sessionStorage.getItem("currentQuestion")}`
+        );
+        const sectionsButtons = activeSection.querySelectorAll("button");
+
+        sectionsButtons.forEach((button) => {
+          if (button.classList.contains("next-question")) {
+            return;
+          }
           button.disabled = true;
           button.classList.add(
             "disabled:pointer-events-none",
@@ -486,7 +452,7 @@
       // Función para mostrar la pregunta actual
       const showQuestion = () => {
         const currentQuestion = sessionStorage.getItem("currentQuestion") || 1;
-        if (currentQuestion > 1) {
+        if (currentQuestion > 1 && currentQuestion != 6) {
           const currentSection = document.getElementById(
             `section-${currentQuestion}`
           );
@@ -515,7 +481,7 @@
         showQuestion();
 
         // Verifica el estado de las preguntas al cargar
-        for (let i = 2; i <= 6; i++) {
+        for (let i = 2; i <= 5; i++) {
           checkQuestionStatus(i);
         }
       });
