@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-[#FFF0F5] to-[#FFE4E1]"
+    >
+      <header class="px-4 lg:px-6 h-14 flex items-center justify-between">
+        <a class="flex items-center justify-center" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 text-[#FF69B4]"
+          >
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+            ></path>
+          </svg>
+          <span class="sr-only">Romantic Adventure</span>
+        </a>
+      </header>
+
+      <main
+        class="flex-1 flex flex-col items-center justify-center px-4 md:px-6 space-y-6"
+      >
+        <section id="section-1" class="text-center space-y-4 hidden">
+          <h1 class="text-4xl font-bold tracking-tighter text-[#FF69B4]">
+            Un Novio muy Enamorado Espera por Ti
+          </h1>
+          <p class="text-lg text-[#8B4513]">
+            Sigue y resuelve las preguntas para encontrar algunos regalos para
+            ti, <br />
+            todo lleva a rescatar a tu futuro novio de las garras de la malvada
+            bruja.
+          </p>
+          <a
+            href="#"
+            onclick="startQuiz()"
+            class="inline-flex h-10 items-center justify-center rounded-md bg-[#FF69B4] px-6 text-sm font-medium text-white shadow transition-colors hover:bg-[#FF1493] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          >
+            Empezar la Aventura
+          </a>
+        </section>
+
+        <section
+          id="section-2"
+          class="text-center space-y-4 hidden"
+          data-section-id="2"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">Eres</h1>
+            <div
+              id="timer"
+              class="bg-gray-200 rounded-full px-4 py-2 text-gray-700 font-bold flex justify-end"
+            >
+              00:00
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Qué día empezaste a hablar con tu novio?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, '10 de Junio')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                10 de Junio
+              </button>
+              <button
+                onclick="checkAnswer(this, '23 de Abril')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                23 de Abril
+              </button>
+              <button
+                onclick="checkAnswer(this, '13 de Mayo')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                13 de Mayo
+              </button>
+              <button
+                onclick="checkAnswer(this, '13 de Junio')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                13 de Junio
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              El mejor día de mi vida, jamás me habia encontrado con nadie que
+              hubiera conocido por internet y resultó ser una experiencia
+              maravillosa. <br />Me hiciste sentir especial desde ese primer
+              momento. Allí nos besamos por primera vez :3<br />
+              Fué el 13 de Mayo, un día que jamás olvidaré.
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+
+        <section
+          id="section-3"
+          class="text-center space-y-4 hidden"
+          data-section-id="3"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">Todo</h1>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Cuando conoció tu novio a tu mamá?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, '27 de Mayo')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                24 de Mayo
+              </button>
+              <button
+                onclick="checkAnswer(this, '17 de Mayo')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                17 de Mayo
+              </button>
+              <button
+                onclick="checkAnswer(this, '5 de Junio')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                5 de Junio
+              </button>
+              <button
+                onclick="checkAnswer(this, '22 de Mayo')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                22 de Mayo
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              Exacto, me engañaste porqué supuestamente me prestarías una sombrilla pero en realidad me llevaste a conocer a tu mamá. <br/>
+              También estaba tu tió y ambos salieron a saludarme, me sentí muy nervioso 😬🫢.
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+
+        <section
+          id="section-4"
+          class="text-center space-y-4 hidden"
+          data-section-id="4"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">Lo que</h1>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Cuál es el anime favorito de tu novio?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, 'Kimetsu no Yaiba')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Kimetsu no Yaiba
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Jujutsu Kaisen')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Jujutsu Kaisen
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Shingeki no Kyojin')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Shingeki no Kyojin
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Dragon Ball')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Dragon Ball
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              Me ví este anime 4 veces, basicamente porqué para cuando salia la siguiente temporada ya me había olvidado de todo lo que pasaba. <br/>
+              Su historia me atrapó desde el primer capítulo, me encanta la trama y los personajes. <br/>
+              Tienes que verlo conmigo algún día, te va a encantar. 😊
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+
+        <section
+          id="section-5"
+          class="text-center space-y-4 hidden"
+          data-section-id="5"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">
+              Yo siempre
+            </h1>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Cuál es mi deporte favorito?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, 'Fútbol')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Fútbol
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Básquetbol')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Básquetbol
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Tenis')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Tenis
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Natación')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Natación
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              Reemplzar
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+
+        <section
+          id="section-6"
+          class="text-center space-y-4 hidden"
+          data-section-id="6"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">Quisé</h1>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Cuál es mi película favorita?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, 'Inception')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Inception
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Titanic')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Titanic
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Avatar')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Avatar
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Matrix')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Matrix
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="/assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              Reemplzar
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+      </main>
+      <footer
+        class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t"
+      >
+        <p class="text-xs text-[#8B4513]"></p>
+      </footer>
+    </div>
+
+    <script>
+      // Tiempo en minutos y segundos
+      let minutes = 0;
+      let seconds = 0;
+
+      // Tiempo total en minutos (se agrega 10 minutos cada vez que se responde incorrectamente)
+      let totalMinutes = 0;
+
+      // Selecciona el elemento del temporizador
+      const timerElement = document.getElementById("timer");
+      const letterElement = document.querySelector(".letter");
+
+      // Respuestas correctas por pregunta
+      const correctAnswers = {
+        2: {
+          answer: "13 de Mayo",
+          letter: "I love you",
+        },
+        3: {
+          answer: "17 de Mayo",
+          letter: "I love you",
+        },
+        4: {
+          answer: "Shingeki no Kyojin",
+          letter: "I love you",
+        },
+        5: {
+          answer: "Matrix",
+          letter: "I love you",
+        },
+      };
+
+      // Función para actualizar el temporizador
+      const updateTimer = () => {
+        seconds--;
+        if (seconds < 0) {
+          if (minutes > 0 || totalMinutes > 0) {
+            seconds = 59;
+            minutes--;
+          } else {
+            seconds = 0; // Evita que el temporizador muestre valores negativos
+          }
+        }
+        timerElement.textContent = `${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+      };
+
+      // Función para iniciar el temporizador
+      const startTimer = () => {
+        if (totalMinutes > 0) {
+          minutes = totalMinutes;
+          seconds = 0;
+          const intervalId = setInterval(() => {
+            updateTimer();
+            if (minutes === 0 && seconds === 0) {
+              clearInterval(intervalId);
+              enableButtons();
+            }
+          }, 1000);
+        }
+      };
+
+      const checkQuestionStatus = (questionIndex) => {
+        const section = document.getElementById(`section-${questionIndex}`);
+        if (
+          sessionStorage.getItem(`question-${questionIndex}-answered`) ===
+          "true"
+        ) {
+          section.querySelector(".letter").classList.remove("hidden");
+          section.querySelector(".next-question").classList.remove("hidden");
+        }
+      };
+
+      // Incrementa el tiempo si la respuesta es incorrecta
+      const checkAnswer = (event, answer) => {
+        const button = event; // Obtiene el botón que fue clicado
+        var section = button.parentElement.parentElement.parentElement; // Encuentra la sección más cercana
+
+        if (section.dataset.sectionId) {
+          var questionIndex = section.dataset.sectionId;
+        }
+        if (answer !== correctAnswers[questionIndex].answer) {
+          totalMinutes += 1; // Incrementa en 10 minutos
+          disableButtons();
+          startTimer(); // Inicia el temporizador con el tiempo acumulado
+        } else {
+          console.log("Respuesta correcta", questionIndex);
+
+          // Marca la pregunta como respondida en sessionStorage
+          sessionStorage.setItem(`question-${questionIndex}-answered`, "true");
+
+          // Muestra la carta y el botón "Siguiente Pregunta"
+          checkQuestionStatus(questionIndex);
+        }
+      };
+
+      const goToNextQuestion = () => {
+        const currentQuestion = parseInt(
+          sessionStorage.getItem("currentQuestion") || "1"
+        );
+        sessionStorage.setItem("currentQuestion", currentQuestion + 1);
+        showQuestion();
+      };
+
+      const enableButtons = () => {
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.disabled = false;
+          button.classList.remove(
+            "disabled:pointer-events-none",
+            "disabled:opacity-50"
+          );
+        });
+      };
+
+      const disableButtons = () => {
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.disabled = true;
+          button.classList.add(
+            "disabled:pointer-events-none",
+            "disabled:opacity-50"
+          );
+        });
+      };
+
+      // Función para mostrar la pregunta actual
+      const showQuestion = () => {
+        const currentQuestion = sessionStorage.getItem("currentQuestion") || 1;
+        if (currentQuestion > 1) {
+          const currentSection = document.getElementById(
+            `section-${currentQuestion}`
+          );
+
+          currentSection
+            .querySelector("h1")
+            .insertAdjacentElement("afterend", timerElement);
+        }
+
+        for (let i = 1; i <= 5; i++) {
+          document.getElementById(`section-${i}`).classList.add("hidden");
+        }
+        document
+          .getElementById(`section-${currentQuestion}`)
+          .classList.remove("hidden");
+      };
+
+      // Inicia el quiz y muestra la primera pregunta
+      const startQuiz = () => {
+        sessionStorage.setItem("currentQuestion", 2);
+        showQuestion();
+      };
+
+      // Muestra la pregunta correcta al cargar la página
+      document.addEventListener("DOMContentLoaded", () => {
+        showQuestion();
+
+        // Verifica el estado de las preguntas al cargar
+        for (let i = 2; i <= 6; i++) {
+          checkQuestionStatus(i);
+        }
+      });
+    </script>
+  </body>
+</html>
