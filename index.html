@@ -317,10 +317,26 @@
 
       // Tiempo total en minutos (se agrega 10 minutos cada vez que se responde incorrectamente)
       let totalMinutes = 0;
+      // Variable para almacenar el intervalo del temporizador
+      let timerInterval;
 
       // Selecciona el elemento del temporizador
       const timerElement = document.getElementById("timer");
       const letterElement = document.querySelector(".letter");
+
+      const saveTimerState = () => {
+        sessionStorage.setItem("timerMinutes", minutes);
+        sessionStorage.setItem("timerSeconds", seconds);
+        sessionStorage.setItem("timerTotalMinutes", totalMinutes);
+      };
+
+      // Función para cargar el estado del temporizador desde sessionStorage
+      const loadTimerState = () => {
+        minutes = parseInt(sessionStorage.getItem("timerMinutes")) || 0;
+        seconds = parseInt(sessionStorage.getItem("timerSeconds")) || 0;
+        totalMinutes =
+          parseInt(sessionStorage.getItem("timerTotalMinutes")) || 0;
+      };
 
       // Respuestas correctas por pregunta
       const correctAnswers = {
@@ -356,10 +372,16 @@
         timerElement.textContent = `${minutes
           .toString()
           .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        // Guarda el estado del temporizador
+        saveTimerState();
       };
 
       // Función para iniciar el temporizador
       const startTimer = () => {
+        // Limpia cualquier intervalo anterior
+        clearInterval(timerInterval);
+
         if (totalMinutes > 0) {
           minutes = totalMinutes;
           seconds = 0;
@@ -368,6 +390,9 @@
             if (minutes === 0 && seconds === 0) {
               clearInterval(intervalId);
               enableButtons();
+            } else {
+              timerInterval = intervalId;
+              disableButtons();
             }
           }, 1000);
         }
@@ -381,6 +406,7 @@
         ) {
           section.querySelector(".letter").classList.remove("hidden");
           section.querySelector(".next-question").classList.remove("hidden");
+          
         }
       };
 
@@ -432,10 +458,14 @@
       };
 
       const disableButtons = () => {
-        const activeSection = document.getElementById(
-          `section-${sessionStorage.getItem("currentQuestion")}`
+        const activeSection = sessionStorage.getItem("currentQuestion");
+        const activeSectionEl = document.getElementById(
+          `section-${activeSection}`
         );
-        const sectionsButtons = activeSection.querySelectorAll("button");
+        if (!activeSectionEl) {
+          return;
+        }
+        const sectionsButtons = activeSectionEl.querySelectorAll("button");
 
         sectionsButtons.forEach((button) => {
           if (button.classList.contains("next-question")) {
@@ -478,7 +508,24 @@
 
       // Muestra la pregunta correcta al cargar la página
       document.addEventListener("DOMContentLoaded", () => {
+        disableButtons();
         showQuestion();
+
+        // Carga el estado del temporizador
+        loadTimerState();
+
+        // Actualiza el elemento del temporizador con los valores cargados
+        timerElement.textContent = `${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        // Inicia el temporizador si hay tiempo restante
+        if (minutes > 0 || seconds > 0) {
+            disableButtons();
+          startTimer();
+        }else{
+            enableButtons();
+        }
 
         // Verifica el estado de las preguntas al cargar
         for (let i = 2; i <= 5; i++) {
