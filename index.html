@@ -13,7 +13,7 @@
       class="flex flex-col min-h-[100dvh] bg-gradient-to-b from-[#FFF0F5] to-[#FFE4E1]"
     >
       <header class="px-4 lg:px-6 h-14 flex items-center justify-between">
-        <a class="flex items-center justify-center" href="#">
+        <button class="flex items-center justify-center" onclick="startQuiz()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -31,21 +31,20 @@
             ></path>
           </svg>
           <span class="sr-only">Romantic Adventure</span>
-        </a>
+        </button>
       </header>
 
       <main
         class="flex-1 flex flex-col items-center justify-center px-4 md:px-6 space-y-6"
       >
-        <section id="section-1" class="text-center space-y-4 hidden">
+        <section id="section-1" class="text-center space-y-4 hidden flex flex-col items-center content-center">
           <h1 class="text-4xl font-bold tracking-tighter text-[#FF69B4]">
             Un Novio muy Enamorado Espera por Ti
           </h1>
-          <p class="text-lg text-[#8B4513]">
-            Sigue y resuelve las preguntas para encontrar algunos regalos para
-            ti, <br />
-            todo lleva a rescatar a tu futuro novio de las garras de la malvada
-            bruja.
+          <p class="text-lg max-w-lg text-[#8B4513]">
+            Sigue y resuelve las preguntas antes de abrir cada regalo. <br />
+            Si respondes incorrectamente, tendrás que esperar 10 minutos para
+            responder de nuevo, no intentes engañar al sistema. 😏
           </p>
           <a
             href="#"
@@ -56,6 +55,7 @@
           </a>
         </section>
 
+        <!-- ############################################################ -->
         <section
           id="section-2"
           class="text-center space-y-4 hidden"
@@ -64,10 +64,12 @@
           <div
             class="flex items-end justify-end content-center items-center mb-6"
           >
-            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow"></h1>
+            <h1 class="text-2xl font-bold text-[#000000] mr-3 grow text-left">
+              Pregunta #1
+            </h1>
             <div
               id="timer"
-              class="bg-gray-200 rounded-full px-4 py-2 text-gray-700 font-bold flex justify-end"
+              class="bg-gray-200 rounded-full px-4 py-2 text-gray-700 font-bold flex justify-end hidden"
             >
               00:00
             </div>
@@ -106,11 +108,21 @@
           <div class="letter hidden">
             <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              El mejor día de mi vida, jamás me habia encontrado con nadie que
-              hubiera conocido por internet y resultó ser una experiencia
-              maravillosa. <br />Me hiciste sentir especial desde ese primer
-              momento. Allí nos besamos por primera vez :3<br />
-              Fué el 13 de Mayo, un día que jamás olvidaré.
+              El mejor día de mi vida, jamás imaginé que conocería al amor de mi
+              vida por internet. Me hiciste sentir especial desde ese primer
+              momento.
+              <br />
+              Allí nos besamos por primera vez :3<br />
+              Fué el 13 de Mayo, un día que jamás olvidaré. Realmente parecías
+              interesada en mi, que lo hicieras evidente me hizó el hombre más
+              feliz del mundo. <br />
+              Gracias por tenerme paciencia y por darme la oportunidad de
+              conocerte.
+            </p>
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left mt-3">
+              Espero que disfrutes mucho estos dulces, te los mereces por ser
+              tan preciosa. Sé que los chocolates son tus favoritos, así que
+              espero haber hecho una buena elección. 💝😊
             </p>
           </div>
 
@@ -122,6 +134,7 @@
           </button>
         </section>
 
+        <!-- ############################################################ -->
         <section
           id="section-3"
           class="text-center space-y-4 hidden"
@@ -130,7 +143,9 @@
           <div
             class="flex items-end justify-end content-center items-center mb-6"
           >
-            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow"></h1>
+            <h1 class="text-2xl font-bold text-[#000000] mr-3 grow text-left">
+              Pregunta #2
+            </h1>
           </div>
           <div>
             <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
@@ -167,9 +182,17 @@
             <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
               Exacto, me engañaste porqué supuestamente me prestarías una
-              sombrilla pero en realidad me llevaste a conocer a tu mamá. <br />
+              sombrilla pero en realidad me llevaste a conocer a tu mamá. 😡😾
+              <br />
               También estaba tu tió y ambos salieron a saludarme, me sentí muy
-              nervioso 😬🫢.
+              nervioso. No puedo olvidar a Yuki, ella también salió a conocerme
+              y el resto de la familia gatuna 💝.
+              <br />
+              Ese día me diste gomitas de banana jajaja, me encantaron.
+            </p>
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left mt-3">
+              Te envio un par de gomitas de banana, junto con las que a mi me
+              gustan para que las disfrutes. 💝😊
             </p>
           </div>
 
@@ -181,6 +204,7 @@
           </button>
         </section>
 
+        <!-- ############################################################ -->
         <section
           id="section-4"
           class="text-center space-y-4 hidden"
@@ -189,48 +213,56 @@
           <div
             class="flex items-end justify-end content-center items-center mb-6"
           >
-            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow"></h1>
+            <h1 class="text-2xl font-bold text-[#000000] mr-3 grow text-left">
+              Pregunta #3
+            </h1>
           </div>
           <div>
             <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
-              ¿Cuál es el anime favorito de tu novio?
+              ¿Cual fué el primer día en casa de tu novio?
             </h2>
             <div class="grid grid-cols-2 gap-4">
               <button
-                onclick="checkAnswer(this, 'Kimetsu no Yaiba')"
+                onclick="checkAnswer(this, '29 de mayo')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Kimetsu no Yaiba
+                29 de mayo
               </button>
               <button
-                onclick="checkAnswer(this, 'Jujutsu Kaisen')"
+                onclick="checkAnswer(this, '13 de junio')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Jujutsu Kaisen
+                13 de junio
               </button>
               <button
-                onclick="checkAnswer(this, 'Shingeki no Kyojin')"
+                onclick="checkAnswer(this, '22 de junio')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Shingeki no Kyojin
+                22 de junio
               </button>
               <button
-                onclick="checkAnswer(this, 'Dragon Ball')"
+                onclick="checkAnswer(this, '25 de mayo')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Dragon Ball
+                25 de mayo
               </button>
             </div>
           </div>
           <div class="letter hidden">
             <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Me ví este anime 4 veces, basicamente porqué para cuando salia la
-              siguiente temporada ya me había olvidado de todo lo que pasaba.
+              El 22 de junio viniste por primera vez a mi casa. Aúnque
+              intentamos dormir, a mi me distraia mucho tu presencia y saber que
+              tenía a una mujer tan hermosa en mi cama, a unos centímetros de
+              mi, no hubó forma de resistirme a tus encantos. 😏
               <br />
-              Su historia me atrapó desde el primer capítulo, me encanta la
-              trama y los personajes. <br />
-              Tienes que verlo conmigo algún día, te va a encantar. 😊
+              Mi mente estaba divagando y pensando hacerte mil cosas, pero noo,
+              era muy pronto para eso. 😅
+            </p>
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left mt-3">
+              Sé que eres un poquito pícara, así que te envio algo que espero
+              ambos podamos disfrutar. 😋 Llevalo en algunas de nuestras
+              salidas, creo que será divertido. 😏
             </p>
           </div>
 
@@ -242,6 +274,7 @@
           </button>
         </section>
 
+        <!-- ############################################################ -->
         <section
           id="section-5"
           class="text-center space-y-4 hidden"
@@ -250,37 +283,59 @@
           <div
             class="flex items-end justify-end content-center items-center mb-6"
           >
-            <h1 class="text-2xl font-bold text-[#FF69B4] mr-3 grow">
+            <h1 class="text-2xl font-bold text-[#000000] mr-3 grow text-left">
+              Pregunta #4
             </h1>
           </div>
           <div>
             <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
-              ¿Te gusta tu novio?
+              ¿Cual es el color favorito de tu novio?
             </h2>
             <div class="grid grid-cols-2 gap-4">
               <button
-                onclick="checkAnswer(this, 'No')"
+                onclick="checkAnswer(this, 'Azul')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                No
+                Azul
               </button>
               <button
-                onclick="checkAnswer(this, 'Si')"
+                onclick="checkAnswer(this, 'Verde')"
                 class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
               >
-                Si
+                Verde
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Rojo')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Rojo
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Negro')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Negro
               </button>
             </div>
           </div>
           <div class="letter hidden">
             <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
             <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
-              Tu también me gustas, me encanta pasar tiempo contigo y hacer
-              cosas juntos. <br />
-              Eres una persona muy especial para mi y me siento muy afortunado
-              de tenerte en mi vida. <br />
-              Te quiero mucho, espero que podamos seguir compartiendo muchos
-              momentos juntos. 💝😊
+              No hay mucho que decir, el color negro combina con todo y yo amo
+              la ropa oscura. Es curioso porqué el negro no se considera un
+              color por todos. Cuando un objeto recibe luz, absorve ciertos
+              colores y refleja otros. Ver algo de color azul significa que
+              absorvió todos los demás colores y reflejó el azul.
+              <br />
+              Ver algo negro significa que el objeto absorbió absolutamente
+              todos los colores, por lo que si no refleja ninguno, realmente no
+              tiene color. El negro es simplemente la ausencia de luz.
+              <br />
+              Tienes un hombre muy random jajaja.
+            </p>
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left mt-3">
+              Espero que los colores de estos regalos sean de tu agrado, es el
+              favorito de cada uno. 🤠
             </p>
           </div>
 
@@ -291,7 +346,66 @@
             Siguiente Pregunta
           </button>
         </section>
-        <section id="section-6" class="text-center space-y-4 hidden">
+
+        <!-- ############################################################ -->
+        <section
+          id="section-6"
+          class="text-center space-y-4 hidden"
+          data-section-id="6"
+        >
+          <div
+            class="flex items-end justify-end content-center items-center mb-6"
+          >
+            <h1 class="text-2xl font-bold text-[#000000] mr-3 grow text-left">
+              Pregunta #5
+            </h1>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-4 text-[#FF69B4]">
+              ¿Quieres ser mi novia?
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button
+                onclick="checkAnswer(this, 'Si')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                Si
+              </button>
+              <button
+                onclick="checkAnswer(this, 'Si')"
+                class="bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors"
+              >
+                No
+              </button>
+            </div>
+          </div>
+          <div class="letter hidden">
+            <img src="assets/letter.png" alt="Carta" class="w-20 mx-auto" />
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left">
+              Sé que no soy el mejor hombre del mundo, pero te prometo que haré
+              todo lo posible para hacerte feliz. <br />
+              Si tu respuesta es afirmativa, prometo ser el mejor novio que
+              pueda ser, cuidarte, respetarte y amarte con todo mi corazón.
+              <br />
+              Si tu respuesta es negativa, no te preocupes, te seguiré esperando
+              hasta que estés lista. 💝
+            </p>
+            <p class="text-[#FF69B4] text-md font-bold max-w-md text-left mt-3">
+              Que este regalo sea símbolo del compromiso que tengo contigo.
+              Espero que algún día sea yo quien te lo dé en persona. (en un
+              altar)
+            </p>
+          </div>
+
+          <button
+            class="next-question bg-gray-200 hover:bg-gray-300 rounded-lg py-3 px-6 transition-colors hidden"
+            onclick="goToNextQuestion()"
+          >
+            Siguiente Pregunta
+          </button>
+        </section>
+
+        <section id="section-7" class="text-center space-y-4 hidden">
           <h1 class="text-4xl font-bold tracking-tighter text-[#FF69B4]">
             Gracias por jugar
           </h1>
@@ -348,10 +462,14 @@
           letter: "I love you",
         },
         4: {
-          answer: "Shingeki no Kyojin",
+          answer: "22 de junio",
           letter: "I love you",
         },
         5: {
+          answer: "Negro",
+          letter: "",
+        },
+        6: {
           answer: "Si",
           letter: "",
         },
@@ -387,9 +505,11 @@
           const intervalId = setInterval(() => {
             updateTimer();
             if (minutes === 0 && seconds === 0) {
+              timerElement.classList.add("hidden");
               clearInterval(intervalId);
               enableButtons();
             } else {
+              timerElement.classList.remove("hidden");
               timerInterval = intervalId;
               disableButtons();
             }
@@ -397,15 +517,22 @@
         }
       };
 
-      const checkQuestionStatus = (questionIndex) => {
-        const section = document.getElementById(`section-${questionIndex}`);
+      const checkQuestionStatus = () => {
+        const activeSection = sessionStorage.getItem("currentQuestion");
+        const section = document.getElementById(`section-${activeSection}`);
+        console.log(`question-${activeSection}-answered`);
+        console.log(
+          sessionStorage.getItem(`question-${activeSection}-answered`)
+        );
         if (
-          sessionStorage.getItem(`question-${questionIndex}-answered`) ===
+          sessionStorage.getItem(`question-${activeSection}-answered`) ===
           "true"
         ) {
+          disableButtons();
           section.querySelector(".letter").classList.remove("hidden");
           section.querySelector(".next-question").classList.remove("hidden");
-          
+        } else {
+          enableButtons();
         }
       };
 
@@ -418,7 +545,14 @@
           var questionIndex = section.dataset.sectionId;
         }
         if (answer !== correctAnswers[questionIndex].answer) {
-          totalMinutes += 1; // Incrementa en 10 minutos
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Respuesta incorrecta",
+            footer:
+              '<span class="text-[#FF69B4]">Intenta de nuevo en 10 minutos :(</span>',
+          });
+          totalMinutes = 10; // Incrementa en 10 minutos
           disableButtons();
           startTimer(); // Inicia el temporizador con el tiempo acumulado
         } else {
@@ -433,7 +567,7 @@
           sessionStorage.setItem(`question-${questionIndex}-answered`, "true");
 
           // Muestra la carta y el botón "Siguiente Pregunta"
-          checkQuestionStatus(questionIndex);
+          checkQuestionStatus();
         }
       };
 
@@ -446,7 +580,15 @@
       };
 
       const enableButtons = () => {
-        const buttons = document.querySelectorAll("button");
+        const activeSection = sessionStorage.getItem("currentQuestion");
+        const activeSectionEl = document.getElementById(
+          `section-${activeSection}`
+        );
+
+        if (!activeSectionEl) {
+          return;
+        }
+        const buttons = activeSectionEl.querySelectorAll("button");
         buttons.forEach((button) => {
           button.disabled = false;
           button.classList.remove(
@@ -491,8 +633,9 @@
             .insertAdjacentElement("afterend", timerElement);
         }
 
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 7; i++) {
           document.getElementById(`section-${i}`).classList.add("hidden");
+          checkQuestionStatus();
         }
         document
           .getElementById(`section-${currentQuestion}`)
@@ -518,17 +661,14 @@
           .toString()
           .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
+        checkQuestionStatus();
+
         // Inicia el temporizador si hay tiempo restante
         if (minutes > 0 || seconds > 0) {
-            disableButtons();
+          disableButtons();
           startTimer();
-        }else{
-            enableButtons();
-        }
-
-        // Verifica el estado de las preguntas al cargar
-        for (let i = 2; i <= 5; i++) {
-          checkQuestionStatus(i);
+        } else {
+          enableButtons();
         }
       });
     </script>
